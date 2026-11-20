@@ -17,10 +17,6 @@ export class HomePage {
         await this.page.goto('https://automationexercise.com/');
     }
 
-    // async navigatetoLoginSignUpPage(){
-    //     await this.page.goto('https://automationexercise.com/login')
-    // }
-
     // Playwright UI shows pop up in the way of other links, so we need to accept the cookies before clicking on the links. 
 
      async acceptCookies() {
@@ -29,7 +25,7 @@ export class HomePage {
         }).click();
     }
 
-    async clickSignupLogin() {
+    async clickSignupLoginButton() {
         await this.page.getByRole('link', {
             name:'Signup / Login'
         }).click()
