@@ -16,9 +16,7 @@ test('navigate to Sign Up page and verify URL', async ({page}) =>{
 
     await homePage.acceptCookies();
 
-    await homePage.navigatetoLoginSignUpPage();
-
-    await homePage.clickSignupLogin();
+    await homePage.clickSignupLoginButton();
 
     await expect(page).toHaveURL('https://automationexercise.com/login');
 
