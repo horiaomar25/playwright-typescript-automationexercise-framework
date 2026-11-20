@@ -17,6 +17,24 @@ export class HomePage {
         await this.page.goto('https://automationexercise.com/');
     }
 
-    // Locators and actions methods for the login page
+    async navigatetoLoginSignUpPage(){
+        await this.page.goto('https://automationexercise.com/login')
+    }
+
+     async acceptCookies() {
+        await this.page.getByRole('button', {
+            name: 'Consent'
+        }).click();
+    }
+
+    async clickSignupLogin() {
+        await this.page.getByRole('link', {
+            name:'Signup / Login'
+        }).click()
+
+    }
+
 
 }
+
+

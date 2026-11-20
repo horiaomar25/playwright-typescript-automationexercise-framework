@@ -8,3 +8,19 @@ test('navigate to Automation Exercise home page', async ({page}) => {
     
     await expect(page).toHaveURL('https://automationexercise.com/');
 })
+
+test('navigate to Sign Up page and verify URL', async ({page}) =>{
+    const homePage = new HomePage(page);
+
+    await homePage.navigatetoHomePage();
+
+    await homePage.acceptCookies();
+
+    await homePage.navigatetoLoginSignUpPage();
+
+    await homePage.clickSignupLogin();
+
+    await expect(page).toHaveURL('https://automationexercise.com/login');
+
+    
+})
