@@ -20,9 +20,14 @@ export class HomePage {
     // Playwright UI shows pop up in the way of other links, so we need to accept the cookies before clicking on the links. 
 
      async acceptCookies() {
-        await this.page.getByRole('button', {
+
+        const consentButton = this.page.getByRole('button', {
             name: 'Consent'
-        }).click();
+        });
+
+        if (await consentButton.isVisible()) {
+            await consentButton.click();
+        }
     }
 
     async clickSignupLoginButton() {
