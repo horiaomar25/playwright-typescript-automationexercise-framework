@@ -6,4 +6,7 @@ export class LoginPage {
      async navigatetoSignUpPage(){
         await this.page.goto('https://automationexercise.com/login')
      }
+
+     // locator for the login form
+
 }
