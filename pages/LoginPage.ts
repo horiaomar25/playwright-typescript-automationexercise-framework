@@ -10,8 +10,8 @@ export class LoginPage {
   // locator for the sign up form
 
   async fillSignUpForm(name: string, email: string) {
-    await this.page.getByPlaceholder("Name").fill(name);
-    await this.page.getByPlaceholder("Email").fill(email);
-    await this.page.getByText('Signup').click();
+    await this.page.locator('input[data-qa="signup-name"]').fill(name);
+    await this.page.locator('input[data-qa="signup-email"]').fill(email);
+    await this.page.locator('button[data-qa="signup-button"]').click();
   }
 }
