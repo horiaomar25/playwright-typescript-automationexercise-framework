@@ -13,5 +13,6 @@ export class LoginPage {
     await this.page.locator('input[data-qa="signup-name"]').fill(name);
     await this.page.locator('input[data-qa="signup-email"]').fill(email);
     await this.page.locator('button[data-qa="signup-button"]').click();
+   
   }
 }
