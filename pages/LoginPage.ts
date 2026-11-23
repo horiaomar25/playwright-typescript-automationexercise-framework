@@ -7,7 +7,6 @@ export class LoginPage {
     await this.page.goto("https://automationexercise.com/login");
   }
 
-  // locator for the sign up form
 
   async fillSignUpForm(name: string, email: string) {
     await this.page.locator('input[data-qa="signup-name"]').fill(name);
