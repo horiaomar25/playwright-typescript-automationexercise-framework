@@ -24,10 +24,11 @@ test("fill the Sign Up form and verify the text on the page", async ({
   await homePage.navigatetoHomePage();
   await homePage.acceptCookies();
   await homePage.clickSignupLoginButton();
+  const email = `test_${Date.now()}@example.com`;
 
   await loginPage.fillSignUpForm(
     "John Doe",
-    `john.doe+${Date.now()}@example.com`,
+    email
   );
   await expect(page.getByText("ENTER ACCOUNT INFORMATION")).toBeVisible();
 });

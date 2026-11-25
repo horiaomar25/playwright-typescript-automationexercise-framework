@@ -3,12 +3,12 @@ import { Page } from "@playwright/test"
 export class AccountInfoPage {
     constructor(private page: Page) {}
 
-    async fillAccountInfoForm(name: string, email: string, password: string, day: string, month: string, year: string) {
-        await this.page.getByRole("radio", { name: "Mr" }).check()
+    async fillAccountInfoForm(password: string, day: string, month: string, year: string) {
+       await this.page.getByRole('radio', { name: 'Mr.', exact: true }).check();
         await this.page.fill('input[name="password"]', password)
-        await this.page.selectOption('select[name="day"]', day)
-        await this.page.selectOption('select[name="month"]', month)
-        await this.page.selectOption('select[name="year"]', year)
+       await this.page.selectOption('select[name="days"]', day);
+await this.page.selectOption('select[name="months"]', month);
+await this.page.selectOption('select[name="years"]', year);
     }
 
     async  selectCheckbox(name: string) {
